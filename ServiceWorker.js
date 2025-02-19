@@ -1,9 +1,9 @@
-const cacheName = "DefaultCompany-Dominican School-0.1";
+const cacheName = "iCompanyU-Dominican School VT-BETA";
 const contentToCache = [
-    "Build/NewTest.loader.js",
-    "Build/NewTest.framework.js",
-    "Build/NewTest.data",
-    "Build/NewTest.wasm",
+    "Build/Website 2.loader.js",
+    "Build/Website 2.framework.js",
+    "Build/Website 2.data",
+    "Build/Website 2.wasm",
     "TemplateData/style.css"
 
 ];
