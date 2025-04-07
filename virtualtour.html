@@ -57,11 +57,11 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Capstone 2 Web.loader.js";
+      var loaderUrl = buildUrl + "/Capstone 2 Web 1.0.loader.js";
       var config = {
-        dataUrl: buildUrl + "/Capstone 2 Web.data",
-        frameworkUrl: buildUrl + "/Capstone 2 Web.framework.js",
-        codeUrl: buildUrl + "/Capstone 2 Web.wasm",
+        dataUrl: buildUrl + "/Capstone 2 Web 1.0.data",
+        frameworkUrl: buildUrl + "/Capstone 2 Web 1.0.framework.js",
+        codeUrl: buildUrl + "/Capstone 2 Web 1.0.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "iCompanyU",
         productName: "Capstone2",
@@ -117,6 +117,44 @@
 
       document.body.appendChild(script);
 
+    </script>
+    <script>
+      function resizeCanvas() {
+        let container = document.querySelector("#unity-container");
+        let canvas = document.querySelector("#unity-canvas");
+  
+        //Hide canvas during resize to prevent flickering
+        canvas.style.visibility = "hidden";
+  
+        let windowWidth = window.innerWidth;
+        let windowHeight = window.innerHeight;
+  
+        // Maintain 16:9 aspect ratio
+        let aspectRatio = 16 / 9;
+        let newWidth = windowWidth * 0.9;  // Use 90% of the window width
+        let newHeight = newWidth / aspectRatio;
+  
+        // Prevent the canvas from exceeding the window height
+        if (newHeight > windowHeight * 0.9) {
+          newHeight = windowHeight * 0.9;
+          newWidth = newHeight * aspectRatio;
+        }
+  
+        // Apply new size to the container and canvas
+        container.style.width = newWidth + "px";
+        container.style.height = newHeight + "px";
+        canvas.style.width = "100%"; // Ensures it fills the container
+        canvas.style.height = "100%";
+  
+        //Show canvas after resizing is complete
+        setTimeout(() => {
+          canvas.style.visibility = "visible";
+        }, 50);
+      }
+  
+      // Resize on window load and when the window resizes
+      window.addEventListener("resize", resizeCanvas);
+      document.addEventListener("DOMContentLoaded", resizeCanvas);
     </script>
   </body>
 </html>
