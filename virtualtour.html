@@ -6,8 +6,21 @@
     <title>Unity WebGL Player | Capstone2</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="js/script.js">
   </head>
   <body>
+    <div id="custom-loading-screen">
+        <div class="loading-content">
+            <div class="spinner"></div>
+              <h2>Loading Virtual Tour</h2>
+            <div class="progress-container">
+                <div class="progress-bar" id="custom-progress-bar"></div>
+            </div>
+            <p class="loading-text">Please wait while we prepare your experience...</p>
+        </div>
+    </div>
+
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
